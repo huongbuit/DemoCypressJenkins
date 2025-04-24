@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Clone Repo') {
       steps {
-        git 'https://github.com/huongbuit/DemoCypressJenkins.git' // Replace with your repo URL
+        git branch: 'main', url: 'https://github.com/huongbuit/DemoCypressJenkins.git'
       }
     }
 
