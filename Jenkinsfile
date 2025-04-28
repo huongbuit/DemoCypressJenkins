@@ -9,7 +9,9 @@ pipeline {
   stages {
     stage('Clone Repo') {
       steps {
-        git branch: 'main', url: 'https://github.com/huongbuit/DemoCypressJenkins.git'
+        git branch: 'main', 
+            url: 'https://github.com/huongbuit/DemoCypressJenkins.git'
+            credentialsId: 'github-pat' // Replace with your credential ID
       }
     }
 
