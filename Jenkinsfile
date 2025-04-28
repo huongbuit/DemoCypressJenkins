@@ -1,5 +1,9 @@
 pipeline {
-  agent any
+  agent  {
+    any {
+      customWorkspace 'C:\\Jenkins\\agent\\workspace\\build_automation_testing_cypress'
+    }
+  }
 
   tools {
     nodejs 'Node 23' // This name must match your NodeJS config
