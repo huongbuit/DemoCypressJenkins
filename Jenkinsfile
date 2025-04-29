@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   tools {
-    nodejs 'Node 23' // This name must match your NodeJS config
+    nodejs 'NodeJS23' // This name must match your NodeJS config
 
   }
 
@@ -12,7 +12,7 @@ pipeline {
         git(
           branch: 'main',
           url: 'https://github.com/huongbuit/DemoCypressJenkins.git',
-          credentialsId: 'github-pat' // Replace with your credential ID
+          credentialsId: 'credentialcypress' // Replace with your credential ID
         )
       }
     }
