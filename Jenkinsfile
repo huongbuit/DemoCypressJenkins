@@ -3,7 +3,7 @@ pipeline {
 
   tools {
     nodejs 'NodeJS23' // This name must match your NodeJS config
-    git 'Default'
+    git 'Git249'
   }
 
   stages {
