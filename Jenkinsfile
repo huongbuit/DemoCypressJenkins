@@ -27,6 +27,12 @@ pipeline {
         bat 'npx cypress run'
       }
     }
+    stage('Generate HTML Report') {
+      steps {
+          bat 'npm run report:merge'
+          bat 'npm run report:generate'
+      }
+    }
   }
 
  
