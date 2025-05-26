@@ -33,6 +33,11 @@ pipeline {
           bat 'npm run report:generate'
       }
     }
+     post {
+      always {
+          archiveArtifacts artifacts: 'cypress/reports/html/**', allowEmptyArchive: true
+      }
+    }
   }
 
  
