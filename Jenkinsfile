@@ -12,7 +12,7 @@ pipeline {
         git(
           branch: 'main',
           url: 'https://github.com/huongbuit/DemoCypressJenkins.git',
-          credentialsId: 'credentialcypress' // Replace with your credential ID
+          credentialsId: 'github-pat' // Replace with your credential ID
         )
       }
     }
