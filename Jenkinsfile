@@ -27,19 +27,18 @@ pipeline {
         bat 'npx cypress run'
       }
     }
-    stage('Generate HTML Report') {
-      steps {
-          bat 'npm run report:merge'
-          bat 'npm run report:generate'
-      }
-    }
     stage('Prepare Report Folders') {
         steps {
             bat 'mkdir cypress\\reports\\raw'
             bat 'mkdir cypress\\reports\\html'
         }
     }
-
+    stage('Generate HTML Report') {
+      steps {
+          bat 'npm run report:merge'
+          bat 'npm run report:generate'
+      }
+    }
   }
  post {
     always {
