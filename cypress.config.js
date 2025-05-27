@@ -8,9 +8,10 @@ module.exports = defineConfig({
   },
   reporter: "mochawesome",
   reporterOptions: {
-    reportDir: "cypress/reports/html",
+    reportDir: 'cypress/reports/raw',   // Raw JSON reports go here
     overwrite: false,
-    html: true,
+    html: false,
     json: true
-  },
+  }
+
 });
