@@ -33,6 +33,12 @@ pipeline {
           bat 'npm run report:generate'
       }
     }
+    stage('Prepare Report Folders') {
+        steps {
+            bat 'mkdir cypress\\reports\\raw'
+            bat 'mkdir cypress\\reports\\html'
+        }
+    }
 
   }
  post {
