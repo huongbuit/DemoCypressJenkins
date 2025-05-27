@@ -37,8 +37,12 @@ pipeline {
   }
  post {
     always {
-        archiveArtifacts artifacts: 'cypress/reports/html/**', allowEmptyArchive: true
+        archiveArtifacts artifacts: 'cypress/reports/html/**', fingerprint: true
+        publishHTML (target: [
+            reportDir: 'cypress/reports/html',
+            reportFiles: 'index.html',
+            reportName: 'Cypress Test Report'
+        ])
     }
-  }
- 
+}
 }
