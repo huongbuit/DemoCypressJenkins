@@ -15,7 +15,12 @@ pipeline {
         )
       }
     }
-
+   stage('Prepare Report Folders') {
+        steps {
+            bat 'mkdir cypress\\reports\\raw'
+            bat 'mkdir cypress\\reports\\html'
+        }
+    }
     stage('Install Dependencies') {
       steps {
         bat 'npm install'
@@ -27,12 +32,7 @@ pipeline {
         bat 'npx cypress run'
       }
     }
-    stage('Prepare Report Folders') {
-        steps {
-            bat 'mkdir cypress\\reports\\raw'
-            bat 'mkdir cypress\\reports\\html'
-        }
-    }
+ 
     stage('Generate HTML Report') {
       steps {
           bat 'npm run report:merge'
